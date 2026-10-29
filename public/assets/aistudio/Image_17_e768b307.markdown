@@ -1,0 +1,225 @@
+---
+name: Academic Precision
+colors:
+  surface: '#faf8ff'
+  surface-dim: '#d2d9f4'
+  surface-bright: '#faf8ff'
+  surface-container-lowest: '#ffffff'
+  surface-container-low: '#f2f3ff'
+  surface-container: '#eaedff'
+  surface-container-high: '#e2e7ff'
+  surface-container-highest: '#dae2fd'
+  on-surface: '#131b2e'
+  on-surface-variant: '#434655'
+  inverse-surface: '#283044'
+  inverse-on-surface: '#eef0ff'
+  outline: '#737686'
+  outline-variant: '#c3c6d7'
+  surface-tint: '#0053db'
+  primary: '#004ac6'
+  on-primary: '#ffffff'
+  primary-container: '#2563eb'
+  on-primary-container: '#eeefff'
+  inverse-primary: '#b4c5ff'
+  secondary: '#712ae2'
+  on-secondary: '#ffffff'
+  secondary-container: '#8a4cfc'
+  on-secondary-container: '#fffbff'
+  tertiary: '#006058'
+  on-tertiary: '#ffffff'
+  tertiary-container: '#007b71'
+  on-tertiary-container: '#b3fff3'
+  error: '#ba1a1a'
+  on-error: '#ffffff'
+  error-container: '#ffdad6'
+  on-error-container: '#93000a'
+  primary-fixed: '#dbe1ff'
+  primary-fixed-dim: '#b4c5ff'
+  on-primary-fixed: '#00174b'
+  on-primary-fixed-variant: '#003ea8'
+  secondary-fixed: '#eaddff'
+  secondary-fixed-dim: '#d2bbff'
+  on-secondary-fixed: '#25005a'
+  on-secondary-fixed-variant: '#5a00c6'
+  tertiary-fixed: '#89f5e7'
+  tertiary-fixed-dim: '#6bd8cb'
+  on-tertiary-fixed: '#00201d'
+  on-tertiary-fixed-variant: '#005049'
+  background: '#faf8ff'
+  on-background: '#131b2e'
+  surface-variant: '#dae2fd'
+typography:
+  display:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 3rem
+    fontWeight: '700'
+    lineHeight: 3.5rem
+    letterSpacing: -0.025em
+  display-mobile:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 2.25rem
+    fontWeight: '700'
+    lineHeight: 2.75rem
+    letterSpacing: -0.02em
+  headline-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 2rem
+    fontWeight: '600'
+    lineHeight: 2.5rem
+    letterSpacing: -0.02em
+  headline-lg-mobile:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 1.5rem
+    fontWeight: '600'
+    lineHeight: 2rem
+    letterSpacing: -0.015em
+  headline-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 1.375rem
+    fontWeight: '600'
+    lineHeight: 1.75rem
+    letterSpacing: -0.01em
+  headline-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 1.125rem
+    fontWeight: '600'
+    lineHeight: 1.5rem
+  body-lg:
+    fontFamily: Inter
+    fontSize: 1.125rem
+    fontWeight: '400'
+    lineHeight: 1.75rem
+  body-md:
+    fontFamily: Inter
+    fontSize: 1rem
+    fontWeight: '400'
+    lineHeight: 1.5rem
+  body-sm:
+    fontFamily: Inter
+    fontSize: 0.875rem
+    fontWeight: '400'
+    lineHeight: 1.25rem
+  label-md:
+    fontFamily: Inter
+    fontSize: 0.875rem
+    fontWeight: '500'
+    lineHeight: 1.25rem
+  label-sm:
+    fontFamily: Inter
+    fontSize: 0.75rem
+    fontWeight: '600'
+    lineHeight: 1rem
+    letterSpacing: 0.025em
+  metric-lg:
+    fontFamily: Inter
+    fontSize: 2rem
+    fontWeight: '600'
+    lineHeight: 2.25rem
+    letterSpacing: -0.02em
+  metric-sm:
+    fontFamily: Inter
+    fontSize: 1.25rem
+    fontWeight: '600'
+    lineHeight: 1.5rem
+rounded:
+  sm: 0.25rem
+  DEFAULT: 0.5rem
+  md: 0.75rem
+  lg: 1rem
+  xl: 1.5rem
+  full: 9999px
+spacing:
+  gutter: 1.5rem
+  gutter-mobile: 0.75rem
+  margin: 2rem
+  margin-mobile: 1rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2.5rem
+---
+
+## Brand & Style
+
+This design system serves focused undergraduate and graduate students balancing demanding schedules, coursework, and revision milestones. The interface delivers an atmosphere of calm, structured clarity, combining the quiet restraint of high-end editorial tools with the responsiveness of modern productivity platforms.
+
+The aesthetic fuses **Modern Educational SaaS** with **Minimalist Utility**:
+- Visual noise is actively reduced to eliminate cognitive fatigue and study-session distraction.
+- Subtle chromatic accents (violet for intelligent assistance, teal for positive study pacing) differentiate machine-generated insights from active student tasks.
+- Interfaces feel lightweight, organized, and structurally reassuring, giving students a sense of mastery over complex academic workloads.
+
+## Colors
+
+The palette establishes clear visual separation between the canvas, operational containers, and AI-driven interactions:
+
+- **Canvas & Surface Architecture**: The default canvas uses a soft, daylight off-white (`#F8FAFC`), while primary interactive cards, timetables, and panels sit on pure `#FFFFFF`. Borders use `#E2E8F0` to maintain soft containment without rigid grid lines.
+- **Primary Text & Hierarchy**: Primary labels and headlines leverage deep slate navy (`#0F172A`), providing superior contrast without the harshness of pure black. Secondary context, metadata, and timestamps utilize slate (`#475569`). Muted cues sit on `#94A3B8`.
+- **Intelligent Accents**: Primary action states and active navigation run on royal blue (`#2563EB`). AI-assisted recommendations, schedule optimizations, and generative summaries utilize violet (`#7C3AED`). Positive milestones, task completion states, and active streaks utilize soft teal (`#0D9488`).
+
+## Typography
+
+The type scale balances geometric approachability with dense academic legibility:
+
+- **Headlines (`Plus Jakarta Sans`)**: Delivers friendly, open proportions for module titles, study block headings, and daily greetings, offsetting academic stress.
+- **Body & Controls (`Inter`)**: Neutral, highly legible rendering down to small annotation sizes. 
+- **Tabular Data & Timers**: All numbers within timetable grids, Pomodoro count-downs, study duration trackers, and test scores must use `font-variant-numeric: tabular-nums` to prevent horizontal shifting during live timer updates.
+
+## Layout & Spacing
+
+The layout adopts a multi-panel productivity structure anchored by an 8pt spatial baseline:
+
+- **Responsive Grid**: 
+  - **Desktop (1024px+)**: 12-column responsive grid with a 260px collapsible sidebar navigation, 24px (`1.5rem`) gutters, and 32px (`2rem`) page margins.
+  - **Tablet (768px – 1023px)**: 8-column layout with icon-rail sidebar (64px width), 16px gutters, and 24px page margins.
+  - **Mobile (< 768px)**: 4-column single-column flow with a persistent bottom navigation bar, 12px (`0.75rem`) gutters, and 16px (`1rem`) page margins. Timetable grids collapse to sequential day-by-day swipe lists.
+- **Density Philosophy**: Analytical modules (syllabi, schedule rows) use compact vertical padding (`space-sm` to `space-md`), while primary focus widgets (AI planner prompts, active session cards) use relaxed whitespace (`space-lg` to `space-xl`) to encourage calm immersion.
+
+## Elevation & Depth
+
+Depth is established via subtle, low-contrast physical tiers rather than heavy shadows:
+
+- **Layer 0 (Canvas)**: `#F8FAFC` base backdrop.
+- **Layer 1 (Cards & Sidebars)**: `#FFFFFF` surface bordered by a 1px continuous stroke of `#E2E8F0`, accompanied by an ambient soft shadow: `0 1px 3px rgba(15, 23, 42, 0.04), 0 1px 2px rgba(15, 23, 42, 0.02)`.
+- **Layer 2 (Floating Popovers, Menus & Tooltips)**: `#FFFFFF` elevated container with 1px border `#E2E8F0` and elevated ambient shadow: `0 10px 15px -3px rgba(15, 23, 42, 0.06), 0 4px 6px -4px rgba(15, 23, 42, 0.03)`.
+- **Layer 3 (Modals & Deep Focus Overlays)**: Centered surface accompanied by a backdrop scrim tinted with `#0F172A` at 30% opacity and 4px Gaussian blur (`backdrop-filter: blur(4px)`).
+- **Focus Rings**: High-visibility interactive states use an inner 2px offset white border surrounded by a 2px outer ring of `#7C3AED` or `#2563EB`.
+
+## Shapes
+
+The design uses balanced, comfortable curvature to feel modern and non-intimidating:
+
+- **Cards, Panels & Modal Dialogue**: 12px to 16px border-radius (`0.75rem` to `1rem`) softens viewport edges while preserving internal structural alignment for dense timetables.
+- **Buttons, Inputs & Selectors**: 8px to 10px border-radius (`0.5rem` to `0.625rem`) provides an intentional ergonomic touch target.
+- **Badges, Status Indicators & AI Tags**: Fully pill-shaped (`9999px`) to create clear differentiation between actionable containers and informational tags.
+
+## Components
+
+### Buttons & Interactive Controls
+- **Primary Action**: Solid `#2563EB` fill with pure white typography, 8px border radius, 40px standard height. On hover: shifts to `#1D4ED8`.
+- **Secondary Action**: White surface, 1px border `#E2E8F0`, `#0F172A` text. On hover: `#F8FAFC` fill with `#CBD5E1` border.
+- **AI Action Variant**: Violet gradient tint (`#7C3AED` to `#6D28D9`) reserved for "Auto-Schedule," "Generate Flashcards," or "Explain Topic."
+
+### AI Pill Badges
+- Pill-shaped tags (`border-radius: 9999px`) pairing a 12px sparkle icon with `label-sm` text.
+- Standard AI badge: `#F5F3FF` fill, `#DDD6FE` border, `#7C3AED` text.
+- Pacing badge: `#F0FDFA` fill, `#CCFBF1` border, `#0D9488` text.
+
+### Educational Dashboard Cards
+- Pure `#FFFFFF` background with 12px or 16px corner radius and 1px `#E2E8F0` border.
+- Cards maintain distinct header zones featuring an icon pill, module title (`headline-sm`), and contextual action link (`label-md`).
+
+### Timetable & Syllabus Trackers
+- **Timetable Matrix**: Clean 1px `#F1F5F9` grid dividers. Course blocks render with soft tinted background fills (e.g., `#EFF6FF` for CS, `#FAF5FF` for Math) paired with a 3px solid left accent border matching the subject's identifier.
+- **Syllabus Progress Tracker**: Linear progress bars using a 6px rail height (`#E2E8F0`) with rounded ends, populated by a `#0D9488` or `#2563EB` fill. Accompanied by tabular percentages (`metric-sm`).
+
+### Progress Rings
+- Circular SVG progress rings utilizing a 4px to 6px stroke-width.
+- Background track sits on `#F1F5F9`; active stroke uses solid `#0D9488` or a dual gradient from `#2563EB` to `#7C3AED` for comprehensive study-completion metrics.
+
+### Interactive Quiz Selectors
+- Stacked choice cards with 10px border radius, 1px border `#E2E8F0`, and interactive transitions:
+  - Default: `#FFFFFF` surface with `#0F172A` body text.
+  - Hover: `#F8FAFC` surface, `#94A3B8` border.
+  - Selected: `#EFF6FF` background, 2px border `#2563EB`, text `#1E40AF`.
+  - Confirmed Correct: `#F0FDFA` background, 2px border `#0D9488`, text `#115E59`.

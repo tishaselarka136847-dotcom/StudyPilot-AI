@@ -1,0 +1,6 @@
+{
+  "name": "StudyPilot AI",
+  "description": "Personalized AI-powered study planner, notes summarizer, active recall quizzes, flashcards, and conceptual study coach.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
