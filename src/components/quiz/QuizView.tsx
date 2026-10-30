@@ -16,6 +16,7 @@ import {
   History,
 } from 'lucide-react';
 import { QuizAttempt, QuizQuestion, QuizRecord, Subject } from '../../types/index.ts';
+import { generateQuiz } from '../../services/aiService.ts';
 
 interface QuizViewProps {
   subjects: Subject[];
@@ -66,23 +67,14 @@ export const QuizView: React.FC<QuizViewProps> = ({
     try {
       const subjectName = selectedSub ? selectedSub.name : 'General Academic Subject';
 
-      const res = await fetch('/api/gemini/quiz', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          subjectName,
-          topicOrNotes,
-          isFromNotes,
-          numQuestions,
-          difficulty,
-          questionType,
-        }),
+      const data = await generateQuiz({
+        subjectName,
+        topicOrNotes,
+        isFromNotes,
+        numQuestions,
+        difficulty,
+        questionType,
       });
-
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || 'Failed to generate quiz from Gemini.');
-      }
 
       const questions: QuizQuestion[] = (data.questions || []).map((q: any, idx: number) => ({
         id: q.id || `q_${idx + 1}`,

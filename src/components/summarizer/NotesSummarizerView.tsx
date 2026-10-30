@@ -16,6 +16,7 @@ import {
   Lightbulb,
 } from 'lucide-react';
 import { Subject, SummaryRecord } from '../../types/index.ts';
+import { summarizeNotes } from '../../services/aiService.ts';
 
 interface NotesSummarizerViewProps {
   subjects: Subject[];
@@ -73,21 +74,12 @@ export const NotesSummarizerView: React.FC<NotesSummarizerViewProps> = ({
       const selectedSub = subjects.find((s) => s.id === selectedSubjectId);
       const subjectName = selectedSub ? selectedSub.name : 'General Academic Notes';
 
-      const res = await fetch('/api/gemini/summarize', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          subjectName,
-          notes: notesText,
-          length: summaryLength,
-          style: summaryStyle,
-        }),
+      const data = await summarizeNotes({
+        subjectName,
+        notes: notesText,
+        length: summaryLength,
+        style: summaryStyle,
       });
-
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || 'Failed to generate notes summary from Gemini.');
-      }
 
       const generated: SummaryRecord = {
         id: `sum_${Date.now()}`,

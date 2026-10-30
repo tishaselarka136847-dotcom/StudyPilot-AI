@@ -159,6 +159,7 @@ export interface UserSettings {
   availableDays: string[];
   theme: 'light' | 'dark';
   studentProfile: StudentProfile;
+  customApiKey?: string;
 }
 
 export interface CoachMessage {

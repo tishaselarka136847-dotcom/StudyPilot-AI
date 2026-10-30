@@ -17,6 +17,7 @@ import {
   Info,
 } from 'lucide-react';
 import { StudyPlan, StudySession, Subject, UserSettings } from '../../types/index.ts';
+import { generateStudyPlan } from '../../services/aiService.ts';
 
 interface StudyPlanViewProps {
   subjects: Subject[];
@@ -137,16 +138,7 @@ export const StudyPlanView: React.FC<StudyPlanViewProps> = ({
         endDate,
       };
 
-      const res = await fetch('/api/gemini/study-plan', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || 'Failed to generate plan from AI server.');
-      }
+      const data = await generateStudyPlan(payload);
 
       // Map sessions to full model
       const formattedSessions: StudySession[] = (data.sessions || []).map((s: any, idx: number) => ({

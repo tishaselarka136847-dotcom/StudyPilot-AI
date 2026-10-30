@@ -16,6 +16,7 @@ import {
   RotateCcw,
 } from 'lucide-react';
 import { Flashcard, FlashcardSet, Subject } from '../../types/index.ts';
+import { generateFlashcards } from '../../services/aiService.ts';
 
 interface FlashcardsViewProps {
   subjects: Subject[];
@@ -129,20 +130,11 @@ export const FlashcardsView: React.FC<FlashcardsViewProps> = ({
       const selectedSub = subjects.find((s) => s.id === selectedSubjectId);
       const subjectName = selectedSub ? selectedSub.name : 'General Academic Subject';
 
-      const res = await fetch('/api/gemini/flashcards', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          subjectName,
-          topicOrNotes,
-          count: cardCount,
-        }),
+      const data = await generateFlashcards({
+        subjectName,
+        topicOrNotes,
+        count: cardCount,
       });
-
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || 'Failed to generate flashcards from Gemini.');
-      }
 
       const cards: Flashcard[] = (data.cards || []).map((c: any, i: number) => ({
         id: c.id || `card_${Date.now()}_${i}`,

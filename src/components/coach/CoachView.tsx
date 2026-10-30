@@ -12,6 +12,7 @@ import {
   BookOpen,
 } from 'lucide-react';
 import { CoachMessage, Subject, UserSettings } from '../../types/index.ts';
+import { askStudyCoach } from '../../services/aiService.ts';
 
 interface CoachViewProps {
   subjects: Subject[];
@@ -66,23 +67,14 @@ export const CoachView: React.FC<CoachViewProps> = ({
     setIsLoading(true);
 
     try {
-      const res = await fetch('/api/gemini/coach', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          messages: newMessages.map((m) => ({ role: m.role, content: m.content })),
-          context: {
-            subjects: subjects.map((s) => s.name),
-            dailyGoal: userSettings.dailyStudyGoalMinutes,
-            currentStreak: studyStreak,
-          },
-        }),
+      const data = await askStudyCoach({
+        messages: newMessages.map((m) => ({ role: m.role, content: m.content })),
+        context: {
+          subjects: subjects.map((s) => s.name),
+          dailyGoal: userSettings.dailyStudyGoalMinutes,
+          currentStreak: studyStreak,
+        },
       });
-
-      const data = await res.json();
-      if (!res.ok) {
-        throw new Error(data.error || 'Failed to get a response from your AI Coach.');
-      }
 
       const assistantMessage: CoachMessage = {
         id: `msg_${Date.now() + 1}`,

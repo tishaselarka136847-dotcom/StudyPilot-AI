@@ -55,6 +55,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
     userSettings.availableDays || ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
   );
   const [theme, setTheme] = useState<'light' | 'dark'>(userSettings.theme || 'light');
+  const [customApiKey, setCustomApiKey] = useState(userSettings.customApiKey || '');
 
   // Keep local theme state in sync when userSettings.theme changes externally (e.g. from outer header button)
   useEffect(() => {
@@ -100,6 +101,7 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
       breakDurationMinutes: Number(breakDuration) || 10,
       availableDays,
       theme,
+      customApiKey: customApiKey.trim() || undefined,
     };
 
     onSaveSettings(updated);
@@ -395,6 +397,45 @@ export const SettingsView: React.FC<SettingsViewProps> = ({
                 </button>
               );
             })}
+          </div>
+        </div>
+
+        {/* AI Engine & Vercel Deployment Configuration */}
+        <div className="space-y-4 pt-2">
+          <h2 className="text-sm font-bold text-slate-900 dark:text-slate-100 pb-2 border-b border-slate-100 dark:border-slate-800 flex items-center gap-2">
+            <Sparkles className="w-4 h-4 text-indigo-600" />
+            <span>AI Engine & Vercel Deployment</span>
+          </h2>
+          <div className="p-4 bg-indigo-50/50 dark:bg-indigo-950/20 border border-indigo-100 dark:border-indigo-900/40 rounded-xl space-y-3">
+            <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+              <div className="flex items-center gap-2">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-xs font-bold text-slate-900 dark:text-slate-100">
+                  Instant Client-Side Engine (Vercel Optimized)
+                </span>
+              </div>
+              <span className="text-[11px] font-semibold text-indigo-700 dark:text-indigo-300 bg-indigo-100 dark:bg-indigo-900/60 px-2 py-0.5 rounded-md w-fit">
+                Zero Latency
+              </span>
+            </div>
+            <p className="text-[11px] text-slate-600 dark:text-slate-400 leading-relaxed">
+              All study schedules, notes summarization, quiz generation, active recall flashcards, and AI tutor coaching run completely in your browser without requiring a backend server.
+            </p>
+            <div>
+              <label className="block text-xs font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                Custom Google Gemini API Key (Optional)
+              </label>
+              <input
+                type="password"
+                value={customApiKey}
+                onChange={(e) => setCustomApiKey(e.target.value)}
+                placeholder="AIzaSy... (Leave empty to use built-in high-speed engine)"
+                className="w-full px-3 py-2 border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 rounded-xl text-xs sm:text-sm text-slate-900 dark:text-slate-100 focus:outline-none focus:ring-2 focus:ring-indigo-500 font-mono"
+              />
+              <p className="text-[10px] text-slate-500 dark:text-slate-400 mt-1">
+                Stored securely in your local browser only. Never transmitted to third-party servers.
+              </p>
+            </div>
           </div>
         </div>
 
